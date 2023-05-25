@@ -13,7 +13,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    padding: 44px 100px;
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin-top: 100px;
+    margin: 100px 0 114px;
 }
 
 .photographer-article{
@@ -51,9 +51,9 @@ h1 {
 .photographer-article a h2 {
     margin: 20px 0 0;
     color: #D3573C;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 36px;
-    line-height: 47px;
+    line-height: 46.87px;
 }
 
 .user {
@@ -70,19 +70,19 @@ h1 {
     text-align: center;
 }
 
-.photographer-article p:nth-child(1) {
+.photographer-article p:nth-of-type(1) {
     color: #901C1C;
     font-size: 13px;
-    line-height: 17px;
+    line-height: 16.93px;
 }
 
-.photographer-article p:nth-child(2) {
+.photographer-article p:nth-of-type(2) {
     font-size: 10px;
-    line-height: 13px;
+    line-height: 13.02px;
 }
 
-.photographer-article p:nth-child(3) {
+.photographer-article p:nth-of-type(3) {
     color: #757575;
-    font-size: 0px;
-    line-height: 12px;
+    font-size: 9px;
+    line-height: 11.72px;
 }
