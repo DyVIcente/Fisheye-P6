@@ -26,12 +26,12 @@ function photographerFactory(data) {
         prices.textContent = `${price}€/jour`;
         
         
-        article.appendChild( link);
-        link.appendChild( img );
-        link.appendChild( h2 );
-        article.appendChild( location );
-        article.appendChild( tag );
-        article.appendChild( prices );
+        article.appendChild(link);
+        link.appendChild(img);
+        link.appendChild(h2);
+        article.appendChild(location);
+        article.appendChild(tag);
+        article.appendChild(prices);
 
         return (article);
     }
