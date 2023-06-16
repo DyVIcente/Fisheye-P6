@@ -15,6 +15,15 @@ function displayData(photographers) {
 };
 
 async function init() {
+    // Ouvre les liens avec le keyboard
+    function openLink(event) {
+        if (event.keyCode === 13) {
+          window.location.href = "index.html";
+        }
+      }
+      
+      const homeLink = document.getElementById("homeLink");
+      homeLink.addEventListener("keydown", openLink);
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
     displayData(photographers);

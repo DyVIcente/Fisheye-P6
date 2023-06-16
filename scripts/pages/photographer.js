@@ -70,9 +70,8 @@ function dropdown(event) {
     } else {
         button.setAttribute('aria-expanded', false);
     }
-    
     setTimeout( () => button.focus() , 50);
-}
+    }
 
 function selectDropdownOption(event) {
     const target = event.currentTarget;
@@ -103,7 +102,6 @@ function selectDropdownOption(event) {
 
     orderWork();
     setTimeout( () => dropdown.querySelector('button').focus() , 50);
-    
 }
 
 function orderWork() {
@@ -149,6 +147,64 @@ function orderWork() {
 }
 
 async function init() {
+    // header
+    const fisheyeHomePage = document.querySelector('a[aria-label="Fisheye Home page"]');
+    fisheyeHomePage.addEventListener("keydown", openlink);
+
+
+    // modal 
+    const contactButton = document.querySelector(".contact_button");
+    contactButton.addEventListener("click", displayModal);
+
+    // dropdown
+    const dropdownButton = document.querySelector(".dropdown button");
+    dropdownButton.addEventListener("click", dropdown);
+
+    const dropdownOptions = document.querySelectorAll(".dropdown [data-value]");
+    dropdownOptions.forEach(option => {
+        option.addEventListener("click", selectDropdownOption);
+    });
+
+    const popularityDropdown = document.getElementById("popularityDropdown");
+    popularityDropdown.addEventListener("click", selectDropdownOption);
+    popularityDropdown.addEventListener("keydown", handleKeyDown);
+
+    // img lightbox
+    const previousImage = document.querySelector('img.previous');
+    previousImage.addEventListener("click", lightboxControl);
+    previousImage.addEventListener("keydown", handleKeyDown);
+
+    // close lightbox
+    const closeButton = document.querySelector('img[role="button"]');
+    closeButton.addEventListener("click", closeLightbox);
+    closeButton.addEventListener("keydown", handleKeyDown);
+
+    // form 
+    const myForm = document.querySelector("#myForm");
+
+    myForm.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+    
+    // Récupérer les valeurs des champs de saisie
+    const firstName = document.querySelector("#firstName").value;
+    const lastName = document.querySelector("#lastName").value;
+    const email = document.querySelector("#email").value;
+    const message = document.querySelector("#yourMessage").value;
+    
+    // Afficher les valeurs dans la console
+    console.log("Prénom:", firstName);
+    console.log("Nom:", lastName);
+    console.log("Email:", email);
+    console.log("Message:", message);
+    
+    // Réinitialiser le formulaire
+    myForm.reset();
+});
+
+
+
+
+
     const { photographers, media } = await getPhotographers();
 
     const photographer = photographers.find( photographe => photographe.id == getPhotographerId() );

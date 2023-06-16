@@ -10,37 +10,34 @@
   </head>
   <body>
     <header>
-      <a href="index.html" tabindex="0" aria-label="Fisheye Home page" onkeydown="openlink(event)">
+      <a href="index.html" tabindex="0" aria-label="Fisheye Home page">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
       </a>
     </header>
 
     <main id="main">
       <section class="photograph-header">
-        <button class="contact_button" onclick="displayModal()" tabindex="0" aria-haspopup="dialog" aria-label="Contact Me">Contactez-moi</button>
+        <button class="contact_button" tabindex="0" aria-haspopup="dialog" aria-label="Contact Me">Contactez-moi</button>
       </section>
       
       <label class="dropdown-label">Trier par</label>
       <div data-value="popularity" class="dropdown" aria-label="Order By"> 
-        <button onclick="dropdown(event)" tabindex="0" aria-haspopup="listbox" id="dropdownButton">Popularité</button>
+        <button tabindex="0" aria-haspopup="listbox" id="dropdownButton">Popularité</button>
         <img src="assets/icons/arrow.svg" alt="" class="arrow">
         <ul class="dropdown-options" role="listbox" aria-labelledby="dropdownButton" aria-activedescendant="popularityDropdown">
-          <li onclick="selectDropdownOption(event)" 
-              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+          <li 
               class="dropdown-hide" 
               data-value="popularity" 
               role="option"
               id="popularityDropdown"
               aria-selected="true"
               tabindex="0">Popularité</li>
-          <li onclick="selectDropdownOption(event)" 
-              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+          <li 
               data-value="date" 
               role="option"
               id="dateDropdown"
               tabindex="0">Date</li>
-          <li onclick="selectDropdownOption(event)" 
-              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+          <li 
               data-value="title" 
               role="option"
               id="titleDropdown"
@@ -59,17 +56,24 @@
       </div>
     </main>
 
+    <div class="lightbox" role="dialog">
+      <p></p>
+      <nav>
+        <img src="assets/icons/lightboxArrow.svg" alt="" tabindex="2" class="previous" aria-label="Previous image" role="link">
+        <img src="assets/icons/lightboxArrow.svg" alt="" tabindex="3" class="next" aria-label="Next image" role="link">
+      </nav>
+      <img src="assets/icons/lightboxClose.svg" alt="" tabindex="1" class="close" aria-label="Close dialog" role="button">
+    </div>
+
 
     <div id="contact_modal" role="dialog" aria-labelledby="contactMe" aria-label="image closeup view">
 			<div class="modal">
 				<header>
           <h1 id="contactMe">Contactez-moi</h1>
-          <img src="assets/icons/close.svg" alt="" tabindex="0" role="button"
-          onclick="closeModal()" 
-          onkeydown="handleKeyDown(event)?closeModal():undefined" />
+          <img src="assets/icons/close.svg" class="close" aria-label="Close dialog"  alt="" tabindex="0" role="button"/>
           <h2></h2>
         </header>
-				<form onsubmit="return sendForm(event)">
+				<form id="myForm">
 					<div>
 						<label for="firstName" id="firstNameLabel">Prénom</label>
 						<input type="text" name="firstName" id="firstName" role="textbox" aria-label="First name" aria-labelledby="firstNameLabel" required/>
@@ -87,10 +91,10 @@
     
     <script src="scripts/factories/photographer.js"></script>
     <script src="scripts/factories/media.js"></script>
-    <!-- <script src="scripts/utils/tabindexSet.js"></script> -->
+    <script src="scripts/utils/tabindexSet.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
-    <!-- <script src="scripts/utils/lightbox.js"></script> -->
-    <!-- <script src="scripts/utils/handleKeyDown.js"></script> -->
+    <script src="scripts/utils/lightbox.js"></script>
+    <script src="scripts/utils/handleKeyDown.js"></script>
     <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>

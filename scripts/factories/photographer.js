@@ -70,5 +70,5 @@ function photographerFactory(data) {
 
 
 
-    return { getUserPictureDOM, getUserProfilDOM, getUserCardDOM  }
+    return { getUserPictureDOM, getUserProfilDOM, getUserCardDOM, price  }
 }

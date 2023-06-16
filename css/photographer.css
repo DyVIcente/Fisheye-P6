@@ -66,6 +66,7 @@ h2 {
     color: #FFFFFF;
     cursor: pointer;
     border: none;
+
 }
 
 .dropdown button {
@@ -95,11 +96,14 @@ h2 {
     width: 100%;
     list-style: none;
     border-radius: 0 0 5px 5px;
+    pointer-events: none;
+
 }
 
 .dropdown-options li {
     position: relative;
     padding: 14px 20px 14px;
+    pointer-events: all;
 }
 
 .dropdown-options li:not(.dropdown-hide)~li:not(.dropdown-hide){
@@ -153,8 +157,8 @@ h2 {
     object-fit: cover;
     border-radius: 5px;
     width: 100%;
-    /* width: 350px but not addapet to large screen  */
-    height: 300px;
+    height: 300px; 
+
 }
 
 .thumb-imgfull figcaption {
@@ -225,6 +229,7 @@ h2 {
   background: rgb(196 196 196/.4);
   padding-top: 1rem;
   padding-bottom: 1rem;
+  overflow-y: scroll;
 }
 
 #contact_modal.modal-show {
@@ -264,6 +269,7 @@ h2 {
 
 form {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 form label {
@@ -287,4 +293,65 @@ form input, form textarea {
 
 form textarea {
   height: 170px;
+}
+
+
+/* css lightbox */
+
+
+/* Lightbox */
+.lightbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #E5E5E5;
+}
+
+.lightbox .thumb-img{
+  position: absolute;
+  width: 1050px;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.lightbox p{
+  position: absolute;
+  top: 94%;
+  left: 22.5%;
+  font-size: 24px;
+  line-height: 31.25px;
+  color: #911C1C;
+  margin: 12px 0;
+}
+
+.lightbox nav{
+  display: flex;
+  gap: 1050px;
+}
+
+.lightbox .previous, .lightbox .next, .lightbox .close{
+  cursor: pointer;
+}
+
+.lightbox .previous, .lightbox .next{
+  margin: 0 35px;
+}
+
+.lightbox .previous{
+  transform: rotate(180deg);
+}
+
+.lightbox .close{
+  position: absolute;
+  top: 7%;
+  right: 19%;
+}
+
+.lightbox-show{
+    display: flex;
 }

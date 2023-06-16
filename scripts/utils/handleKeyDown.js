@@ -1,0 +1,22 @@
+// Gérer les évènements clavier et les liens avec enter et espace
+function handleKeyDown(event) {
+    switch (event.key) {
+        case "Enter":
+            return true;
+            break;
+        case " ":
+            event.preventDefault();
+            return true;
+            break;
+        default:
+            return false;
+            break;
+    }
+}
+
+function openlink(event) {
+    if (event.key === " ") {
+        event.preventDefault();
+        window.open(event.currentTarget.href,'_self');
+    }
+}
